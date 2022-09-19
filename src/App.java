@@ -1,61 +1,59 @@
 import java.util.Scanner;
-import java.util.Random;
-
-// #2
 public class App {
-    public static void main(String[] args) {
-        String play;
-        boolean isTrue = true;
-        boolean status = true;
-        int attempts = 0;
-        int number;
-        String input;
-        Scanner sc = new Scanner(System.in);
-        while (status) {
-            System.out.println("Do you want to play the game?");
-            play = sc.nextLine();
-
-            if (play.equals("no")) {
-                System.out.println("Why the heck did you come here then?");
-                status = false;
-                System.exit(0);
-            } else if (play.equals("yes")) {
-                System.out.println("Wish you great luck then!");
-                status = false;
-            } else {
-                System.out.println("Print the actual answer!");
-            }
+    public static void main(String[]args){
+        String name;
+        String surname;
+        int age;
+        String in;
+        Scanner sc= new Scanner(System.in);
+    System.out.println("Welcome to 'Find your activity' program!");
+        System.out.println("How about tell us your name?");
+        name=sc.nextLine();
+        System.out.println("And surname please.");
+        surname=sc.nextLine();
+        if(name.equals("Tyler")&&surname.equals("Durden")){
+            System.out.println("Are we the same person?");
+            System.out.println("Nevermind, just joking.");
         }
-        try {
-            Random random = new Random();
-            int x = random.nextInt(11);
-            System.out.println("Try to guess the number");
-            while (isTrue) {
-                attempts++;
+        System.out.println("");
+        System.out.println("Welcome "+name+ " "+surname+" to your profile.");
+        System.out.println("Please enter your age.");
+        in=sc.nextLine();
+        age=Integer.parseInt(in);
+        if(age<=6){
+            System.out.println("It seems like that you need to go to the kindergarten before going to the school.");
 
-
-                input = sc.nextLine();
-                number = Integer.parseInt(input);
-                if (number == x) {
-                    System.out.println("Congrats! You guessed the number");
-                    System.out.println("Attempts: " + attempts);
-                    isTrue = false;
-
-                }
-                if (number < x) {
-                    System.out.println("Try bigger");
-                } else if (number > x) {
-                    System.out.println("Try smaller");
-
-                } else if (number > 10 || number < 0) {
-                    System.out.println("Please enter a value from '0' to '10'");
-                }
-
-
-            }
-        } catch (Exception e) {
-            System.out.println("I think you probably mess up this program.");
         }
+        else if(age>=7&&age<=17){
+            System.out.println("In your age it is the best to go to school.");
+
+        }
+        else if(age>=18&&age<=22){
+            System.out.println("Try to apply to University.");
+
+        }
+        else if(age>=23&&age<=60){
+            System.out.println("You should get a work.");
+
+        }
+        else if(age>60){
+            System.out.println("You should probably get retired");
+
+        }
+        else if(age>100){
+            System.out.println("Wow, you have turned 100. Congratulations!");
+
+        }
+        else{
+            System.out.println("Try to enter an actual number");
+
+        }
+
+
+
+
+
+
 
     }
 }
